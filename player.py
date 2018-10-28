@@ -1,9 +1,10 @@
 class Player:
     """Player class"""
 
-    def __init__(self, name=""):
+    def __init__(self, name="", color="#2c3e50"):
         self.name = name
-        self.boxes = 0
+        self.owned = 0
+        self.color = color
 
     def move(self):
         pass
