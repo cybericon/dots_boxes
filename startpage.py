@@ -3,7 +3,9 @@ from tkinter.font import Font
 
 from line import VerticalLine, HorizontalLine
 from box import Box
-from config import BOXES, SIZE
+from score import Score
+
+from config import BOXES, available_boxes, boxes_owned, SIZE, players, playerOne, playerTwo
 
 
 class StartPage(tk.Frame):
@@ -32,15 +34,15 @@ class StartPage(tk.Frame):
         # First Block
         self.createHeading(10, text="Boxes")
         self.createBoxInfo(50,
-                           text="Available Boxes \t ")
+                           text="Available Boxes \t ", attach_variable=available_boxes)
         self.createBoxInfo(70,
-                           text="Owned Boxes \t ")
+                           text="Owned Boxes \t ", attach_variable=boxes_owned)
         # Second Block
         self.createHeading(140, text="Boxes Owned")
         self.createBoxInfo(180,
-                           text="Player One \t ")
+                           text=f"{playerOne.name} \t \t ")
         self.createBoxInfo(200,
-                           text="Player Two \t ")
+                           text=f"{playerTwo.name} \t \t ")
         # Third Block
         self.createHeading(270, text="Current Move", color="#bdccd4")
         self.createBoxInfo(310,
@@ -64,11 +66,6 @@ class StartPage(tk.Frame):
             for line in line_pair:
                 line.drawLine(self.canvas, offset, gap)
 
-        for x in range(size):
-            for y in range(size):
-                box = BOXES[y][x]
-                box.displayScore(self.canvas, offset, gap)
-
     def createHeading(self, top_distance, text, color="#ff931e"):
         self.scoreboard.create_text(
             30,
@@ -88,5 +85,5 @@ class StartPage(tk.Frame):
             top_distance,
             fill=color,
             font=self._regular_font,
-            text=text + str(attach_variable),
+            text=text + f'{attach_variable}',
             anchor="nw")
