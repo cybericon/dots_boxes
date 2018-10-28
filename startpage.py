@@ -20,31 +20,32 @@ class StartPage(tk.Frame):
         self.canvas = tk.Canvas(
             self, width=550, height=600, background=self._light_bg)
         self.canvas.grid(row=0, column=0, pady=0, padx=0)
-        self.__getCanvasContents()
 
         """ Scoreboard related layout to be cleaned up """
         self.scoreboard = tk.Canvas(self, width=230, height=600,
                                     background=self._dark_bg)
         self.scoreboard.grid(row=0, column=1, pady=0, padx=0)
+
+        self.__getCanvasContents()
         self.__getScoreBoardContents()
 
     def __getScoreBoardContents(self):
         # First Block
         self.createHeading(10, text="Boxes")
         self.createBoxInfo(50,
-                           text="Available Boxes \t ", attach_variable=available_boxes)
+                           text="Available Boxes \t ", attach_variable=available_boxes())
         self.createBoxInfo(70,
-                           text="Owned Boxes \t ", attach_variable=boxes_owned)
+                           text="Owned Boxes \t ", attach_variable=boxes_owned())
         # Second Block
         self.createHeading(140, text="Boxes Owned")
         self.createBoxInfo(180,
-                           text=f"{playerOne.name} \t \t ")
+                           text=f"{playerOne.name} \t \t ", attach_variable=playerOne.owned)
         self.createBoxInfo(200,
-                           text=f"{playerTwo.name} \t \t ")
+                           text=f"{playerTwo.name} \t \t ", attach_variable=playerTwo.owned)
         # Third Block
         self.createHeading(270, text="Current Move", color="#bdccd4")
         self.createBoxInfo(310,
-                           text="Player One / Two \t ", color="#ff931e")
+                           text=f"{players[0].name} \t ", color="#ff931e", attach_variable='')
 
     def __getCanvasContents(self):
         self.image = tk.PhotoImage(file="inc/assets/logo.png")
@@ -54,10 +55,10 @@ class StartPage(tk.Frame):
         gap = 50
         offset = 100
 
-        vertical_lines = [VerticalLine([x, y, x, y + 1], self.canvas)
+        vertical_lines = [VerticalLine([x, y, x, y + 1], self)
                           for x in range(size + 1)for y in range(size)]
 
-        horizontal_lines = [HorizontalLine([x, y, x + 1, y], self.canvas)
+        horizontal_lines = [HorizontalLine([x, y, x + 1, y], self)
                             for x in range(size) for y in range(size + 1)]
 
         for line_pair in zip(vertical_lines, horizontal_lines):
