@@ -3,8 +3,6 @@ from tkinter.font import Font
 
 from line import VerticalLine, HorizontalLine
 from box import Box
-from score import Score
-
 from config import BOXES, available_boxes, boxes_owned, SIZE, players, playerOne, playerTwo
 
 
