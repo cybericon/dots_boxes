@@ -18,6 +18,7 @@ class Line:
 
     def selectLine(self, line_object, canvas):
         global players
+        canvas.tag_unbind(line_object, "<Button-1>")
         canvas.itemconfig(line_object, fill=players[0].color)
         self.updateBoxes(BOXES)
 
@@ -44,9 +45,15 @@ class Line:
         self.frame.createBoxInfo(310,
                                  text=f"{players[0].name}", color="#ff931e", attach_variable='')
         if boxes_owned() == total_boxes:
-            winner = playerOne if playerOne.owned > playerTwo.owned else playerTwo
+            if playerOne.owned > playerTwo.owned:
+                winner = playerOne.name
+            elif playerOne.owned < playerTwo.owned:
+                winner = playerTwo.name
+            else:
+                winner = "No One"
+
             self.frame.createHeading(
-                400, text=f"{winner.name} Wins")
+                400, text=f"{winner} Wins")
 
 
 class VerticalLine(Line):
