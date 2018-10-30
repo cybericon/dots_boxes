@@ -1,5 +1,2 @@
-- Implementation of  player scores
-- Further cleaning startpage by separating presentation and logic ( as much as possible )
-- adding Welcome and result pages/screens
-- setup bootstaping by refactoring conig ( possibly by a bootstrap class or something more relatable)
-- proper documentation by adding doc block comments
+- may be including welcome page
+- and result page
