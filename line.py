@@ -10,7 +10,6 @@ class Line:
     def selectLine(self, line_object, canvas):
         canvas.tag_unbind(line_object, "<Button-1>")
         canvas.itemconfig(line_object, fill=core.players[0].color)
-        # self.updateBoxes(canvas)
         core.updateMove(self, canvas)
 
 
