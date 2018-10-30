@@ -53,13 +53,13 @@ class ScoreBoard(View):
 
         if core.boxes_owned() == core.total_boxes:
             if core.playerOne.owned > core.playerTwo.owned:
-                winner = core.playerOne.name
+                text = f"{core.playerOne.name} Wins"
             elif core.playerOne.owned < core.playerTwo.owned:
-                winner = core.playerTwo.name
+                text = f"{core.playerTwo.name} Wins"
             else:
-                winner = "No One"
+                text = "Game Drawn"
             self.createHeading(
-                400, text=f"{winner} Wins")
+                400, text=text)
 
     def createHeading(self, top_distance, text, color="#ff931e"):
         self.window.create_text(
