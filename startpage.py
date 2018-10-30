@@ -1,9 +1,7 @@
 import tkinter as tk
 from tkinter.font import Font
 
-from box import Box
 from core import scoreboard, stage
-from line import VerticalLine, HorizontalLine
 
 
 class StartPage(tk.Frame):

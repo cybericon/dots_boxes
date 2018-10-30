@@ -1,4 +1,3 @@
-from box import Box
 import core
 
 
