@@ -17,7 +17,7 @@ class App(tk.Tk):
 
         self.frames = {}
 
-        frame = StartPage(container, self)
+        frame = StartPage(container)
         self.frames[StartPage] = frame
 
         frame.grid(row=0, column=0, sticky="nsew")

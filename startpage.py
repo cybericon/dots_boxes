@@ -5,7 +5,7 @@ from core import scoreboard, stage
 
 
 class StartPage(tk.Frame):
-    def __init__(self, parent, controller):
+    def __init__(self, parent):
         tk.Frame.__init__(self, parent)
         self._light_bg = "#ecf0f1"
         self._dark_bg = "#2c3e50"
