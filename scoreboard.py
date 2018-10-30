@@ -58,7 +58,7 @@ class ScoreBoard(View):
                 winner = core.playerTwo.name
             else:
                 winner = "No One"
-            self.frame.createHeading(
+            self.createHeading(
                 400, text=f"{winner} Wins")
 
     def createHeading(self, top_distance, text, color="#ff931e"):
