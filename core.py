@@ -29,7 +29,7 @@ def getPlayer():
 """ Setting up Boxes """
 
 total_boxes = size * size
-boxes = [[Box(x, y) for x in range(size)] for y in range(size)]
+boxes = [[Box(x, y) for y in range(size)] for x in range(size)]
 
 
 def boxes_owned():
