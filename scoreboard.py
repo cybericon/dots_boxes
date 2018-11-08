@@ -40,15 +40,15 @@ class ScoreBoard(View):
         # Second Block
         self.createHeading(140, text="Boxes Owned")
         self.createBoxInfo(180,
-                           text=f"{core.playerOne.name} \t \t ",
+                           text=f"{core.playerOne.name.upper()} \t \t ",
                            attach_variable=core.playerOne.owned)
         self.createBoxInfo(200,
-                           text=f"{core.playerTwo.name} \t \t ",
+                           text=f"{core.playerTwo.name.upper()} \t \t ",
                            attach_variable=core.playerTwo.owned)
         # Third Block
         self.createHeading(270, text="Current Move", color="#bdccd4")
         self.createBoxInfo(310,
-                           text=f"{core.players[0].name} \t ",
+                           text=f"{core.players[0].name.upper()} \t ",
                            color="#ff931e", attach_variable='')
 
         if core.boxes_owned() == core.total_boxes:
