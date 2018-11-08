@@ -20,7 +20,7 @@ class Box:
         (x, y) = [point*gap+offset for point in [
             self.x, self.y]]
         if self.owned != None:
-            initials = self.owned[:3]
+            initials = self.owned[0].upper()
         else:
             initials = ''
 
