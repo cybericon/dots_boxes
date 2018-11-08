@@ -4,6 +4,7 @@ And update status of game with each move by the player
 """
 
 from stage import Stage
+from copyrights import Copyrights
 from scoreboard import ScoreBoard
 from player import Player
 from box import Box
@@ -52,6 +53,7 @@ horizontal_lines = [HorizontalLine([x, y, x + 1, y])
 """ Setting up Start page contents """
 stage = Stage()
 scoreboard = ScoreBoard()
+copyrights = Copyrights()
 
 
 def updateMove(line, canvas):
