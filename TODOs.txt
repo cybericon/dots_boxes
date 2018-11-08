@@ -1,2 +1,0 @@
-- may be including welcome page
-- and result page
