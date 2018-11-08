@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter.font import Font
 
-import core
 from view import View
 
 
