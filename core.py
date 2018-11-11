@@ -11,9 +11,25 @@ from box import Box
 from line import VerticalLine, HorizontalLine
 
 
-size = int(input("Please enter grid size (min 4 max 8) : "))
+
 p1_name = input("Player 1 name: ")
 p2_name = input("Player 2 name: ")
+
+level = input("Please Select Level \n(Beginner : B, Intermediate : I, Expert : E) : ")
+level = level.upper()[0]
+
+while (level not in ['B', 'I', 'E']):
+    print("!!! INCORRECT SELECTION !!!")
+    level = input("Please Select Level \n(Beginner : B, Intermediate : I, Expert : E) : ")
+    level = level.upper()[0]
+
+if level== 'B':
+    size = 4
+elif level == 'I':
+    size = 6
+elif level == 'E':
+    size = 8
+
 
 
 """ Setting up Players """
@@ -67,6 +83,5 @@ def updateMove(line, canvas):
             turn += 1
             box.displayOwner(canvas, 100, 50)
     if turn == 0:
-        p1, p2 = players
-        players = [p2, p1]
+        players[0], players[1] = players[1], players[0]
     scoreboard.show()
