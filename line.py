@@ -17,7 +17,6 @@ class VerticalLine(Line):
 
     def __init__(self, points):
         Line.__init__(self, points)
-        core.boxes
         if self.x1 > 0 and self.x1 < len(core.boxes[0]):
             self.boxes.append(core.boxes[self.x1][self.y1])
             self.walls.append(3)
@@ -34,7 +33,6 @@ class VerticalLine(Line):
 class HorizontalLine(Line):
     def __init__(self, points):
         Line.__init__(self, points)
-        core.boxes
         if self.y1 > 0 and self.y1 < len(core.boxes[0]):
             self.boxes.append(core.boxes[self.x1][self.y1])
             self.walls.append(0)
